@@ -11,6 +11,8 @@ requirements = [
     'Flask>=0.8',
     'six>=1.3.0',
     'pytz',
+    'lxml==3.5.0',
+    'pyquery==1.2.10'
 ]
 
 
