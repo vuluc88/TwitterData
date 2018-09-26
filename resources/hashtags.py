@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_restful import Resource
 from models import TwitterAccount
 from models import Tweet
+from utils import TweetManager
 
 
 #get tweets by hashtag APIs
@@ -17,16 +18,14 @@ class HashtagTweetApi(Resource):
                 pass
 
         lst_tweets = []
-        #TODO: using Twitter's API to get tweets by hashtag
+        manager = TweetManager()
+        criteria    = {
+            'hashtag': hashtag_str,
+            'limit': limit
+        }
+        results = manager.getTweets(criteria)
 
-        #Fetch account data
-        account = TwitterAccount(1, 'Vu Luc', '/vuluc88')
+        for tweet in results:
+            lst_tweets.append(tweet.json())
 
-        #Fetch Tweet data
-        #Tweet(account, date, likes, replies, retweets, text)
-        tweet   = Tweet(account, '12:57 PM 7 Mar 2018', 169, 13, 27, "Historically, bash filename pattern matching was known")
-
-        lst_tweets.append(tweet.json())
         return lst_tweets
-
-
