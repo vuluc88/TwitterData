@@ -6,27 +6,27 @@
 * PIP
 
 ## Installing requirements
-'''
+```
     pip install flask-restful
-'''
+```
 
 Download source code
 Navigate to code directory and run following command
 
-'''
+```
     python setup.py develop
-'''
+```
 
 
 ## Start the server
 In the code directory, run command
-'''
+```
     python main.py
-'''
+```
 By default, the app will run at localhost, port 5000. If you want to run on other port, go to file main.py and edit the port in this line of code
-'''
+```
     app.run(debug=False, port=5000)
-'''
+```
 Open browser, <http://localhost:5000>
 
 
@@ -42,7 +42,7 @@ There're 2 APIs
     - **limit:** the limit number of tweets to return. It is set to 30 by default
 - **Example url call:** http://127.0.0.1:5000/hashtags/bowsette?limit=1
 - **Example result data:**
-'''
+```
 [
     {
         account: {
@@ -57,7 +57,7 @@ There're 2 APIs
         likes: 1
     }
 ]
-'''
+```
 
 ### Get tweets by user
 - **Description:** This api will return the list of tweets search by given username
@@ -68,7 +68,7 @@ There're 2 APIs
     - **limit:** the limit number of tweets to return. It is set to 30 by default
 - **Example url call:** http://127.0.0.1:5000/users/realdonaldtrump?limit=1
 - **Example result data:**
-'''
+```
 [
     {
         account: {
@@ -83,7 +83,7 @@ There're 2 APIs
         likes: 30383
     }
 ]
-'''
+```
 
 
 ### Stop server 
